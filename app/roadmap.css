@@ -1,0 +1,68 @@
+.roadmap{background:#fff;color:#111;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.roadmap *{box-sizing:border-box}
+.roadmap header{max-width:860px;margin:0 auto;padding:32px 20px 8px}
+.roadmap h1{font-size:2rem;margin:0 0 4px}
+.roadmap header p{margin:0;color:#6b7280;font-size:.95rem}
+.roadmap .bar{height:8px;border:1px solid #111;border-radius:6px;margin-top:16px;overflow:hidden}
+.roadmap .bar i{display:block;height:100%;background:#15803d;transition:width .25s}
+.roadmap .pct{font-size:.8rem;color:#6b7280;margin:6px 0 4px}
+
+.roadmap main{max-width:860px;margin:0 auto;padding:24px 20px 80px;position:relative}
+.roadmap .lines{position:absolute;left:0;top:0;z-index:0;pointer-events:none;overflow:visible}
+.roadmap .ln{fill:none;stroke:#3b6fe0;stroke-width:2;stroke-linecap:round}
+.roadmap .ln.dot{stroke-dasharray:2 5}
+
+.roadmap .row{display:grid;grid-template-columns:1fr 190px 1fr;column-gap:56px;align-items:center;margin:16px 0;position:relative;z-index:1}
+.roadmap .cell{width:100%}
+.roadmap .cell.l{justify-self:end}
+.roadmap .cell.r{justify-self:start}
+
+.roadmap .core{background:#ffff00;border:2px solid #000;color:#000;font-weight:500;font-size:.85rem;
+  text-align:center;padding:8px;border-radius:3px;cursor:pointer;position:relative}
+.roadmap .core.blue{background:#4070e0;border-color:#4070e0;color:#fff}
+.roadmap .lbl{justify-self:center;background:#fff;padding:6px 10px;font-size:.9rem;text-align:center;position:relative}
+.roadmap .lbl.big{font-size:1.3rem}
+
+.roadmap .item{background:#fce8a6;color:#000;border:2px solid #000;border-radius:3px;padding:6px 8px;
+  font-size:.8rem;text-align:center;cursor:pointer;user-select:none}
+.roadmap .item.blue{background:#4070e0;border-color:#4070e0;color:#fff}
+.roadmap .item.white{background:#fff}
+.roadmap .item.head{width:100%}
+.roadmap .core:hover,.roadmap .item:hover{filter:brightness(.95)}
+.roadmap .core:focus-visible,.roadmap .item:focus-visible{outline:3px solid #3b6fe0;outline-offset:2px}
+.roadmap .core.done,.roadmap .item.done{background:#bbf7d0;border-color:#15803d;color:#111;text-decoration:line-through}
+
+.roadmap .list{display:flex;flex-direction:column;gap:6px}
+.roadmap .group{background:#fff;border:2px solid #000;border-radius:4px;padding:8px;display:flex;flex-direction:column;gap:8px}
+.roadmap .group.bare{border-color:transparent;background:transparent;padding:0}
+.roadmap .sec{display:flex;flex-direction:column;gap:6px}
+.roadmap .wrap{display:flex;flex-wrap:wrap;gap:6px}
+.roadmap .wrap .item{flex:1 1 calc(50% - 3px)}
+.roadmap .txt{font-size:.78rem;text-align:center;padding:2px}
+
+.roadmap .card{background:#fff;border:2px solid #000;border-radius:4px;padding:12px;font-size:.78rem;line-height:1.45}
+.roadmap .card b{color:#2a2adf;font-weight:500;display:block;margin-top:6px}
+.roadmap .card p{margin:2px 0 6px}
+.roadmap .keep{position:relative;z-index:1;width:min(100%,460px);margin:50px auto 0;background:#fff;border:2px solid #000;border-radius:4px;padding:10px}
+.roadmap .keep-row{display:flex;gap:6px;justify-content:center;margin-top:6px;flex-wrap:wrap}
+.roadmap .keep-row span{background:#3f33d1;color:#fff;font-size:.78rem;padding:7px 14px;border-radius:3px}
+
+/* shadcn <Button> styled with plain CSS */
+.roadmap .rm-btn{background:#fff;color:#111;border:1.5px solid #111;border-radius:6px;font-size:.8rem;cursor:pointer;transition:transform .15s,background .15s}
+.roadmap .rm-btn:hover{background:#ffff00;color:#000;transform:translateY(-1px)}
+.roadmap header .rm-btn{margin-top:10px;height:auto;padding:4px 12px}
+.roadmap .to-top{position:fixed;right:20px;bottom:20px;z-index:30;width:42px;height:42px;border-radius:999px}
+
+.roadmap .panel{position:fixed;top:0;right:0;z-index:40;width:min(440px,100%);height:100vh;overflow:auto;
+  background:#fff;color:#111;border-left:2px solid #111;padding:56px 22px 24px;box-shadow:-8px 0 24px #0003}
+.roadmap .panel h2{margin:0 0 10px;font-size:1.25rem}
+.roadmap .panel-x{position:absolute;top:12px;right:12px;width:34px;height:34px}
+.roadmap .md{font-size:.88rem;line-height:1.55;margin-bottom:16px}
+.roadmap .md a{color:#3b6fe0}
+.roadmap .md h1,.roadmap .md h2,.roadmap .md h3{font-size:1rem;margin:14px 0 4px}
+
+@media (max-width:760px){
+  .roadmap .lines{display:none}
+  .roadmap .row{grid-template-columns:1fr;row-gap:8px}
+  .roadmap .cell.l,.roadmap .cell.r{justify-self:stretch}
+}

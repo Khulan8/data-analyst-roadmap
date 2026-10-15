@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Imported from the repo's roadmaps/data-analyst/content/*.md files
+model Topic {
+  id      Int    @id @default(autoincrement())
+  nodeId  String @unique
+  slug    String
+  title   String
+  content String
+
+  @@index([slug])
+}
+
+// Which boxes the user has marked as done
+model Progress {
+  key  String  @id
+  done Boolean @default(true)
+}
